@@ -6,9 +6,10 @@ public class UserInfoDTO extends UserDTO {
 
     private static final long serialVersionUID = -1968348581L;
 
-    private long numFinishedTasks;
-    private long numDelayedTasks;
+    private long numPlannedTasks;
     private long numNotPlannedTasks;
+    private long numFinishedTasks;
+    private long numFinishedDelayedTasks;
 
     public UserInfoDTO(User user) {
 	super(user);
@@ -16,6 +17,14 @@ public class UserInfoDTO extends UserDTO {
 
     public UserInfoDTO(String login) {
 	super(login);
+    }
+
+    public long getNumPlannedTasks() {
+	return numPlannedTasks;
+    }
+
+    public void setNumPlannedTasks(long numPlannedTasks) {
+	this.numPlannedTasks = numPlannedTasks;
     }
 
     public long getNumNotPlannedTasks() {
@@ -26,14 +35,6 @@ public class UserInfoDTO extends UserDTO {
 	this.numNotPlannedTasks = numNotPlannedTasks;
     }
 
-    public long getNumDelayedTasks() {
-	return numDelayedTasks;
-    }
-
-    public void setNumDelayedTasks(long numDelayedTasks) {
-	this.numDelayedTasks = numDelayedTasks;
-    }
-
     public long getNumFinishedTasks() {
 	return numFinishedTasks;
     }
@@ -42,13 +43,22 @@ public class UserInfoDTO extends UserDTO {
 	this.numFinishedTasks = numFinishedTasks;
     }
 
+    public long getNumFinishedDelayedTasks() {
+	return numFinishedDelayedTasks;
+    }
+
+    public void setNumFinishedDelayedTasks(long numFinishedDelayedTasks) {
+	this.numFinishedDelayedTasks = numFinishedDelayedTasks;
+    }
+
     @Override
     public String toString() {
-	return "UserWithDataDTO [numFinishedTasks=" + numFinishedTasks
-		+ ", numDelayedTasks=" + numDelayedTasks
-		+ ", numNotPlannedTasks=" + numNotPlannedTasks + ", id=" + id
-		+ ", login=" + login + ", email=" + email + ", password="
-		+ password + ", isAdmin=" + isAdmin + "]";
+	return "UserInfoDTO [numPlannedTasks=" + numPlannedTasks
+		+ ", numNotPlannedTasks=" + numNotPlannedTasks
+		+ ", numFinishedTasks=" + numFinishedTasks
+		+ ", numFinishedDelayedTasks=" + numFinishedDelayedTasks
+		+ ", id=" + id + ", login=" + login + ", email=" + email
+		+ ", password=" + password + ", isAdmin=" + isAdmin + "]";
     }
 
 }

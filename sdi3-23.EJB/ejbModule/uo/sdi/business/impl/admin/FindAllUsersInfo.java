@@ -20,19 +20,21 @@ public class FindAllUsersInfo implements Command<List<UserInfoDTO>> {
 	for (User user : users) {
 	    UserInfoDTO userInfo = new UserInfoDTO(user);
 
-	    userInfo.setNumNotPlannedTasks(TaskFinder.findNumPlannedTasks(user
+	    userInfo.setNumPlannedTasks(TaskFinder.findNumPlannedTasks(user
 		    .getId()));
 
-	    userInfo.setNumDelayedTasks(TaskFinder.findNumDelayedTasks(user
+	    userInfo.setNumNotPlannedTasks(TaskFinder.findNumNotPlannedTasks(user
 		    .getId()));
 
 	    userInfo.setNumFinishedTasks(TaskFinder.findNumFinishedTasks(user
 		    .getId()));
+
+	    userInfo.setNumFinishedDelayedTasks(TaskFinder
+		    .findNumFinishedDelayedTasks(user.getId()));
 
 	    usersInfo.add(userInfo);
 	}
 
 	return usersInfo;
     }
-
 }

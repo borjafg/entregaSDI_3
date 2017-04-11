@@ -97,11 +97,11 @@
 		</query>
 	</named-query>
 
-	<named-query name="Task.findNumDelayedTasks">
+	<named-query name="Task.findNumNotPlannedTasks">
 		<query><![CDATA[select count(t.id) from Task t
 			where t.user.id = :userId and
 			t.finished is null and
-			t.planned < CURRENT_DATE]]>
+			t.planned is null]]>
 		</query>
 	</named-query>
 
@@ -109,6 +109,14 @@
 		<query>select count(t.id) from Task t
 			where t.user.id = :userId and
 			t.finished is not null
+		</query>
+	</named-query>
+
+	<named-query name="Task.findNumFinishedDelayedTasks">
+		<query><![CDATA[select count(t.id) from Task t
+			where t.user.id = :userId and
+			t.finished is not null and
+			t.planned < CURRENT_DATE]]>
 		</query>
 	</named-query>
 
