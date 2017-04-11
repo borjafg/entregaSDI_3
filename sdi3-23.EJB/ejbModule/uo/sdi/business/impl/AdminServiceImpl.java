@@ -9,11 +9,13 @@ import uo.sdi.business.impl.admin.DeepDeleteUserCommand;
 import uo.sdi.business.impl.admin.DisableUserCommand;
 import uo.sdi.business.impl.admin.EnableUserCommand;
 import uo.sdi.business.impl.admin.FindAllUsers;
+import uo.sdi.business.impl.admin.FindAllUsersInfo;
 import uo.sdi.business.impl.admin.FindUserById;
 import uo.sdi.business.impl.admin.RestartDatabase;
 import uo.sdi.business.local.LocalAdminService;
 import uo.sdi.business.remote.RemoteAdminService;
 import uo.sdi.dto.UserDTO;
+import uo.sdi.dto.UserInfoDTO;
 
 @Stateless
 public class AdminServiceImpl implements LocalAdminService, RemoteAdminService {
@@ -41,6 +43,13 @@ public class AdminServiceImpl implements LocalAdminService, RemoteAdminService {
     @Override
     public List<UserDTO> findAllUsers() throws BusinessException {
 	return new FindAllUsers().execute();
+    }
+
+    @Override
+    public List<UserInfoDTO> findAllUsersInfo()
+	    throws BusinessException {
+	
+	return new FindAllUsersInfo().execute();
     }
 
     @Override

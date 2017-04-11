@@ -19,8 +19,13 @@ public class EnableUserCommand implements Command<Void> {
     public Void execute() throws BusinessException {
 	User user = UserFinder.findById(id);
 
-	BusinessCheck.isNotNull(user, "El usuario no existe",
+	BusinessCheck.isNotNull(user, "El usuario no existe.",
 		"error_administrador_cambiar_estado_usuario_no_existe");
+
+	BusinessCheck.isFalse(user.getIsAdmin(),
+		"No se puede cambiar el estado de la cuenta de este usuario ["
+			+ user.getLogin() + "] porque es un administrador.",
+		"error_administrador__cambiar_estado_usuario_administrador");
 
 	BusinessCheck.isTrue(user.getStatus().equals(UserStatus.DISABLED),
 		"El usuario ya estaba habilitado.",

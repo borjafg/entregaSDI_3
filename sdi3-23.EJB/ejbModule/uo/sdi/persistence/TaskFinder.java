@@ -3,6 +3,8 @@ package uo.sdi.persistence;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.NoResultException;
+
 import uo.sdi.model.Task;
 import uo.sdi.persistence.util.Jpa;
 import alb.util.date.DateUtil;
@@ -14,7 +16,7 @@ public class TaskFinder {
     }
 
     public static List<Task> findAll() {
-	return Jpa.getManager().createNamedQuery("Task.FindAll", Task.class)
+	return Jpa.getManager().createNamedQuery("Task.findAll", Task.class)
 		.getResultList();
     }
 
@@ -102,7 +104,7 @@ public class TaskFinder {
     public static List<Task> findUnfinishedTasksByCategoryId(final Long id) {
 	return Jpa
 		.getManager()
-		.createNamedQuery("Task.FindUnfinishedTasksByCategoryId",
+		.createNamedQuery("Task.findUnfinishedTasksByCategoryId",
 			Task.class).setParameter("categId", id).getResultList();
     }
 
@@ -119,7 +121,7 @@ public class TaskFinder {
     public static List<Task> findFinishedTasksByCategoryId(Long catId) {
 	return Jpa
 		.getManager()
-		.createNamedQuery("Task.FindFinishedTasksByCategoryId",
+		.createNamedQuery("Task.findFinishedTasksByCategoryId",
 			Task.class).setParameter("categId", catId)
 		.getResultList();
     }
@@ -139,9 +141,56 @@ public class TaskFinder {
     public static List<Task> findFinishedTasksInboxByUserId(Long userId) {
 	return Jpa
 		.getManager()
-		.createNamedQuery("Task.FindFinishedTasksInboxByUserId",
+		.createNamedQuery("Task.findFinishedTasksInboxByUserId",
 			Task.class).setParameter("userId", userId)
 		.getResultList();
+    }
+
+    // ====================================
+    // Buscar número de tareas del usuario
+    // ====================================
+
+    public static int findNumPlannedTasks(Long userId) {
+	try {
+	    return Jpa
+		    .getManager()
+		    .createNamedQuery("Task.findNumPlannedTasks", Integer.class)
+		    .setParameter("userId", userId).getSingleResult();
+	}
+
+	catch (NoResultException nre) {
+	    throw new RuntimeException("Ha ocurrido un error al buscar el "
+		    + "número de tareas planeadas de un usuario", nre);
+	}
+    }
+
+    public static int findNumDelayedTasks(Long userId) {
+	try {
+	    return Jpa
+		    .getManager()
+		    .createNamedQuery("Task.findNumDelayedTasks", Integer.class)
+		    .setParameter("userId", userId).getSingleResult();
+	}
+
+	catch (NoResultException nre) {
+	    throw new RuntimeException("Ha ocurrido un error al buscar el "
+		    + "número de tareas restradas de un usuario", nre);
+	}
+    }
+
+    public static int findNumFinishedTasks(Long userId) {
+	try {
+	    return Jpa
+		    .getManager()
+		    .createNamedQuery("Task.findNumFinishedTasks",
+			    Integer.class).setParameter("userId", userId)
+		    .getSingleResult();
+	}
+
+	catch (NoResultException nre) {
+	    throw new RuntimeException("Ha ocurrido un error al buscar el "
+		    + "número de tareas finalizadas de un usuario", nre);
+	}
     }
 
 }

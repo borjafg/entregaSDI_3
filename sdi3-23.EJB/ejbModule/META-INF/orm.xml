@@ -25,11 +25,12 @@
 	</named-query>
 
 
+
 	<!-- ============== -->
 	<!-- Consultas Task -->
 	<!-- ============== -->
 
-	<named-query name="Task.FindAll">
+	<named-query name="Task.findAll">
 		<query>select t from Task t</query>
 	</named-query>
 
@@ -62,27 +63,55 @@
 		</query>
 	</named-query>
 
-	<named-query name="Task.FindUnfinishedTasksByCategoryId">
+	<named-query name="Task.findUnfinishedTasksByCategoryId">
 		<query>select t from Task t where
 			t.category.id = :categId and
 			t.finished is null
 		</query>
 	</named-query>
 
-	<named-query name="Task.FindFinishedTasksByCategoryId">
+	<named-query name="Task.findFinishedTasksByCategoryId">
 		<query>select t from Task t where
 			t.category.id = :categId and
 			t.finished is not null
 		</query>
 	</named-query>
 
-	<named-query name="Task.FindFinishedTasksInboxByUserId">
+	<named-query name="Task.findFinishedTasksInboxByUserId">
 		<query>select t from Task t where
 			t.user.id = :userId and
 			t.category is null and
 			t.finished is not null
 		</query>
 	</named-query>
+
+	<!-- - - - - - - - - - - - - - - -->
+	<!-- Número de tareas del usuario -->
+	<!-- - - - - - - - - - - - - - - -->
+
+	<named-query name="Task.findNumPlannedTasks">
+		<query><![CDATA[select count(t.id) from Task t
+			where t.user.id = :userId and
+			t.finished is null and
+			t.planned is not null]]>
+		</query>
+	</named-query>
+
+	<named-query name="Task.findNumDelayedTasks">
+		<query><![CDATA[select count(t.id) from Task t
+			where t.user.id = :userId and
+			t.finished is null and
+			t.planned < CURRENT_DATE]]>
+		</query>
+	</named-query>
+
+	<named-query name="Task.findNumFinishedTasks">
+		<query>select count(t.id) from Task t
+			where t.user.id = :userId and
+			t.finished is not null
+		</query>
+	</named-query>
+
 
 
 	<!-- ============== -->

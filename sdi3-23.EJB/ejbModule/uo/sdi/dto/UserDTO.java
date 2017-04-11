@@ -9,12 +9,12 @@ public class UserDTO implements Serializable {
 
     private static final long serialVersionUID = -347020645785881L;
 
-    private Long id;
+    protected Long id;
 
-    private String login;
-    private String email;
-    private String password;
-    private Boolean isAdmin = false;
+    protected String login;
+    protected String email;
+    protected String password;
+    protected Boolean isAdmin = false;
 
     private UserStatus status = UserStatus.ENABLED;
 
