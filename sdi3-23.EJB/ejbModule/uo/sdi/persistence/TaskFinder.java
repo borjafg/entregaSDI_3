@@ -150,11 +150,11 @@ public class TaskFinder {
     // Buscar número de tareas del usuario
     // ====================================
 
-    public static int findNumPlannedTasks(Long userId) {
+    public static Long findNumPlannedTasks(Long userId) {
 	try {
 	    return Jpa
 		    .getManager()
-		    .createNamedQuery("Task.findNumPlannedTasks", Integer.class)
+		    .createNamedQuery("Task.findNumPlannedTasks", Long.class)
 		    .setParameter("userId", userId).getSingleResult();
 	}
 
@@ -164,11 +164,11 @@ public class TaskFinder {
 	}
     }
 
-    public static int findNumDelayedTasks(Long userId) {
+    public static Long findNumDelayedTasks(Long userId) {
 	try {
 	    return Jpa
 		    .getManager()
-		    .createNamedQuery("Task.findNumDelayedTasks", Integer.class)
+		    .createNamedQuery("Task.findNumDelayedTasks", Long.class)
 		    .setParameter("userId", userId).getSingleResult();
 	}
 
@@ -178,12 +178,12 @@ public class TaskFinder {
 	}
     }
 
-    public static int findNumFinishedTasks(Long userId) {
+    public static Long findNumFinishedTasks(Long userId) {
 	try {
 	    return Jpa
 		    .getManager()
 		    .createNamedQuery("Task.findNumFinishedTasks",
-			    Integer.class).setParameter("userId", userId)
+			    Long.class).setParameter("userId", userId)
 		    .getSingleResult();
 	}
 

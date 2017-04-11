@@ -6,9 +6,9 @@ public class UserInfoDTO extends UserDTO {
 
     private static final long serialVersionUID = -1968348581L;
 
-    private int numFinishedTasks;
-    private int numDelayedTasks;
-    private int numNotPlannedTasks;
+    private long numFinishedTasks;
+    private long numDelayedTasks;
+    private long numNotPlannedTasks;
 
     public UserInfoDTO(User user) {
 	super(user);
@@ -18,27 +18,27 @@ public class UserInfoDTO extends UserDTO {
 	super(login);
     }
 
-    public int getNumNotPlannedTasks() {
+    public long getNumNotPlannedTasks() {
 	return numNotPlannedTasks;
     }
 
-    public void setNumNotPlannedTasks(int numNotPlannedTasks) {
+    public void setNumNotPlannedTasks(long numNotPlannedTasks) {
 	this.numNotPlannedTasks = numNotPlannedTasks;
     }
 
-    public int getNumDelayedTasks() {
+    public long getNumDelayedTasks() {
 	return numDelayedTasks;
     }
 
-    public void setNumDelayedTasks(int numDelayedTasks) {
+    public void setNumDelayedTasks(long numDelayedTasks) {
 	this.numDelayedTasks = numDelayedTasks;
     }
 
-    public int getNumFinishedTasks() {
+    public long getNumFinishedTasks() {
 	return numFinishedTasks;
     }
 
-    public void setNumFinishedTasks(int numFinishedTasks) {
+    public void setNumFinishedTasks(long numFinishedTasks) {
 	this.numFinishedTasks = numFinishedTasks;
     }
 
