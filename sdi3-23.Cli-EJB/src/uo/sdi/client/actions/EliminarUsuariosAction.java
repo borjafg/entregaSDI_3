@@ -9,24 +9,26 @@ import alb.util.menu.Action;
 
 public class EliminarUsuariosAction implements Action {
 
-	@Override
-	public void execute() throws Exception {
-		Long id;
-		try {
+    @Override
+    public void execute() throws Exception {
+	try {
+	    Long id = Input.pedirLong("Escribe el identificador "
+		    + "del usuario que hay que eliminar");
 
-			id = Input.pedirLong("Inserte identificador del usuario "
-					+ "que desea eliminar");
-			Console.println("\n====================\n");
-			JndiServiceLocator.getAdminService().deepDeleteUser(id);
-			Console.println("\n====================\n");
-			Console.println(MessageManager
-					.getMessage("administrador__exito_borrar_usuario"));
+	    Console.println("\n====================\n");
+	    JndiServiceLocator.getAdminService().deepDeleteUser(id);
+	    Console.println("\n====================\n");
 
-		} catch (BusinessException be) {
-			Console.println(MessageManager.getMessage(be
-					.getClaveFicheroMensajes()));
-		}
-
+	    Console.println(MessageManager
+		    .getMessage("administrador__exito_borrar_usuario"));
 	}
+
+	catch (BusinessException be) {
+	    Console.println("\n====================\n");
+
+	    Console.println(MessageManager.getMessage(be
+		    .getClaveFicheroMensajes()));
+	}
+    }
 
 }

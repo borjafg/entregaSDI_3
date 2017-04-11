@@ -9,22 +9,19 @@ import alb.util.menu.BaseMenu;
 
 public class MainMenu extends BaseMenu {
 
-	
-	public MainMenu(){
-		menuOptions = new Object[][]{{"Menú administrador EJB",null},
-				{"Listar usuarios", ListarUsuariosAction.class},
-				{"Eliminar usuarios", EliminarUsuariosAction.class},
-				{"Deshabilitar usuarios",DeshabilitarUsuarioAction.class}
-		};
-	}
-	
-	
-	public static void main(String[] args) {
-		Log.setLogLevel(LogLevel.DEBUG);
+    public MainMenu() {
+	menuOptions = new Object[][] {
 
-		
-		new MainMenu().execute();
-	}
+	{ "Menú administrador EJB", null },
+		{ "Listar usuarios", ListarUsuariosAction.class },
+		{ "Eliminar usuarios", EliminarUsuariosAction.class },
+		{ "Deshabilitar usuarios", DeshabilitarUsuarioAction.class } };
+    }
 
-	
+    public static void main(String[] args) {
+	Log.setLogLevel(LogLevel.DEBUG);
+
+	new MainMenu().execute();
+    }
+
 }
