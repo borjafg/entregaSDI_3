@@ -20,10 +20,12 @@ public class Printer {
 			} else {
 				mensaje += "no \n";
 			}
-			mensaje += "\t\t--> tareas retrasadas:" + user.getNumDelayedTasks()
+			mensaje += "\t\t--> tareas planeadas:" + user.getNumPlannedTasks()
 					+ "\n";
 			mensaje += "\t\t--> tareas finalizadas:"
 					+ user.getNumFinishedTasks() + "\n";
+			mensaje += "\t\t--> tareas retrasadas y finalizadas:"
+					+ user.getNumFinishedDelayedTasks() + "\n";
 			mensaje += "\t\t--> tareas no planeadas:"
 					+ user.getNumNotPlannedTasks() + "\n";
 
