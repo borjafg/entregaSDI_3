@@ -3,6 +3,7 @@ package uo.sdi.business.impl;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.jws.WebService;
 
 import uo.sdi.business.exception.BusinessException;
 import uo.sdi.business.impl.task.category.CreateCategoryCommand;
@@ -29,6 +30,7 @@ import uo.sdi.dto.CategoryDTO;
 import uo.sdi.dto.TaskDTO;
 
 @Stateless
+@WebService(name = "TaskService_SOAP")
 public class TaskServiceImpl implements LocalTaskService, RemoteTaskService {
 
     // ======================================

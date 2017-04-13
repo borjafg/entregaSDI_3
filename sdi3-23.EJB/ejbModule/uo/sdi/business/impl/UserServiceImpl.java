@@ -1,6 +1,7 @@
 package uo.sdi.business.impl;
 
 import javax.ejb.Stateless;
+import javax.jws.WebService;
 
 import uo.sdi.business.exception.BusinessException;
 import uo.sdi.business.impl.user.FindLoggableUSerCommand;
@@ -11,6 +12,7 @@ import uo.sdi.business.remote.RemoteUserService;
 import uo.sdi.dto.UserDTO;
 
 @Stateless
+@WebService(name = "UserService_SOAP")
 public class UserServiceImpl implements LocalUserService, RemoteUserService {
 
     @Override

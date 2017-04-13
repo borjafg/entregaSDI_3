@@ -3,6 +3,7 @@ package uo.sdi.business.impl;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.jws.WebService;
 
 import uo.sdi.business.exception.BusinessException;
 import uo.sdi.business.impl.admin.DeepDeleteUserCommand;
@@ -18,6 +19,7 @@ import uo.sdi.dto.UserDTO;
 import uo.sdi.dto.UserInfoDTO;
 
 @Stateless
+@WebService(name = "AdminService_SOAP")
 public class AdminServiceImpl implements LocalAdminService, RemoteAdminService {
 
     @Override
@@ -46,9 +48,8 @@ public class AdminServiceImpl implements LocalAdminService, RemoteAdminService {
     }
 
     @Override
-    public List<UserInfoDTO> findAllUsersInfo()
-	    throws BusinessException {
-	
+    public List<UserInfoDTO> findAllUsersInfo() throws BusinessException {
+
 	return new FindAllUsersInfo().execute();
     }
 

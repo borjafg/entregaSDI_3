@@ -1,6 +1,6 @@
 # Ignorar las clases generadas
-build/*
-bin/*
+build/
+bin/
 
 
 
