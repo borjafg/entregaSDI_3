@@ -15,18 +15,14 @@ public class EliminarUsuariosAction implements Action {
 	    Long id = Input.pedirLong("Escribe el identificador "
 		    + "del usuario que hay que eliminar");
 
-	    Console.println("\n====================\n");
 	    new AdminServiceImplService().getAdminServiceSOAPPort()
 		    .deepDeleteUser(id);
-	    Console.println("\n====================\n");
 
 	    Console.println(MessageManager
 		    .getMessage("administrador__exito_borrar_usuario"));
 	}
 
 	catch (BusinessException_Exception be) {
-	    Console.println("\n====================\n");
-
 	    Console.println(MessageManager.getMessage(be.getFaultInfo()
 		    .getClaveFicheroMensajes()));
 	}

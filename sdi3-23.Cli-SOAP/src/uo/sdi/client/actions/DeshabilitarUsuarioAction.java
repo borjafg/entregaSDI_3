@@ -16,18 +16,14 @@ public class DeshabilitarUsuarioAction implements Action {
 	    id = Input.pedirLong("Escribe el identificador del"
 		    + "usuario que hay que deshabilitar");
 
-	    Console.println("\n====================\n");
 	    new AdminServiceImplService().getAdminServiceSOAPPort()
 		    .disableUser(id);
-	    Console.println("\n====================\n");
 
 	    Console.println(MessageManager
 		    .getMessage("administrador__exito_cambiar_estado"));
 	}
 
 	catch (BusinessException_Exception be) {
-	    Console.println("\n====================\n");
-
 	    Console.println(MessageManager.getMessage(be.getFaultInfo()
 		    .getClaveFicheroMensajes()));
 	}

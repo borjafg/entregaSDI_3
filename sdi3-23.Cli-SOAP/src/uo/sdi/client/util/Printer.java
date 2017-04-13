@@ -37,7 +37,7 @@ public class Printer {
 	    mensaje += TAB + TAB;
 	    mensaje += "--> Número de tareas finalizadas: %d\n\n";
 
-	    Console.printf(mensaje, , ,
+	    Console.printf(mensaje, user.getId(), user.getLogin(),
 		    user.getEmail(), user.getStatus().name().toLowerCase(),
 		    isAdmin, user.getNumPlannedTasks(),
 		    user.getNumNotPlannedTasks(),

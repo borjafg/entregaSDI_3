@@ -2,6 +2,8 @@ package uo.sdi.dto;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlElement;
+
 import uo.sdi.model.User;
 import uo.sdi.model.types.UserStatus;
 
@@ -9,9 +11,14 @@ public class UserDTO implements Serializable {
 
     private static final long serialVersionUID = -347020645785881L;
 
+    // Si no se pone no se reconoce al generar las clases con SOAP
+    @XmlElement
     protected Long id;
 
+    // Si no se pone no se reconoce al generar las clases con SOAP
+    @XmlElement
     protected String login;
+
     protected String email;
     protected String password;
     protected Boolean isAdmin = false;
