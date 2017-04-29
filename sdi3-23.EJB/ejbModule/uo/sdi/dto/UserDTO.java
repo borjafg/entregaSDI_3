@@ -3,27 +3,29 @@ package uo.sdi.dto;
 import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+import uo.sdi.dto.types.UserStatusDTO;
 import uo.sdi.model.User;
-import uo.sdi.model.types.UserStatus;
 
+@XmlRootElement(name = "user")
 public class UserDTO implements Serializable {
 
     private static final long serialVersionUID = -347020645785881L;
 
-    // Si no se pone no se reconoce al generar las clases con SOAP
-    @XmlElement
     protected Long id;
 
-    // Si no se pone no se reconoce al generar las clases con SOAP
-    @XmlElement
     protected String login;
 
     protected String email;
     protected String password;
     protected Boolean isAdmin = false;
 
-    private UserStatus status = UserStatus.ENABLED;
+    private UserStatusDTO status = UserStatusDTO.ENABLED;
+
+    public UserDTO() {
+
+    }
 
     public UserDTO(User user) {
 	this.id = user.getId();
@@ -33,21 +35,36 @@ public class UserDTO implements Serializable {
 	this.password = user.getPassword();
 	this.isAdmin = user.getIsAdmin();
 
-	this.status = user.getStatus();
+	this.status = DTOadapter.parseStatusToDTO(user.getStatus());
     }
 
     public UserDTO(String login) {
 	this.login = login;
     }
 
+    // ===================================
+    // Getters y Setters
+    // ===================================
+
+    @XmlElement(name = "id")
     public Long getId() {
 	return id;
     }
 
+    public void setId(Long id) {
+	this.id = id;
+    }
+
+    @XmlElement(name = "login")
     public String getLogin() {
 	return login;
     }
 
+    public void setLogin(String login) {
+	this.login = login;
+    }
+
+    @XmlElement(name = "email")
     public String getEmail() {
 	return email;
     }
@@ -56,6 +73,7 @@ public class UserDTO implements Serializable {
 	this.email = email;
     }
 
+    @XmlElement(name = "password")
     public String getPassword() {
 	return password;
     }
@@ -64,14 +82,16 @@ public class UserDTO implements Serializable {
 	this.password = password;
     }
 
-    public UserStatus getStatus() {
+    @XmlElement(name = "status")
+    public UserStatusDTO getStatus() {
 	return status;
     }
 
-    public void setStatus(UserStatus status) {
+    public void setStatus(UserStatusDTO status) {
 	this.status = status;
     }
 
+    @XmlElement(name = "is_admin")
     public boolean getIsAdmin() {
 	return isAdmin;
     }
@@ -79,6 +99,10 @@ public class UserDTO implements Serializable {
     public void setIsAdmin(boolean isAdmin) {
 	this.isAdmin = isAdmin;
     }
+
+    // ====================================
+    // HashCode, equals y toString
+    // ====================================
 
     @Override
     public int hashCode() {

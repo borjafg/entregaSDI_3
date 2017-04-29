@@ -1,7 +1,11 @@
 package uo.sdi.dto;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import uo.sdi.model.User;
 
+@XmlRootElement(name = "user_info")
 public class UserInfoDTO extends UserDTO {
 
     private static final long serialVersionUID = -1968348581L;
@@ -11,6 +15,10 @@ public class UserInfoDTO extends UserDTO {
     private long numFinishedTasks;
     private long numFinishedDelayedTasks;
 
+    public UserInfoDTO() {
+
+    }
+
     public UserInfoDTO(User user) {
 	super(user);
     }
@@ -19,6 +27,11 @@ public class UserInfoDTO extends UserDTO {
 	super(login);
     }
 
+    // ===================================
+    // Getters y Setters
+    // ===================================
+
+    @XmlElement(name = "num_planned_tasks")
     public long getNumPlannedTasks() {
 	return numPlannedTasks;
     }
@@ -27,6 +40,7 @@ public class UserInfoDTO extends UserDTO {
 	this.numPlannedTasks = numPlannedTasks;
     }
 
+    @XmlElement(name = "num_not_planned_tasks")
     public long getNumNotPlannedTasks() {
 	return numNotPlannedTasks;
     }
@@ -35,6 +49,7 @@ public class UserInfoDTO extends UserDTO {
 	this.numNotPlannedTasks = numNotPlannedTasks;
     }
 
+    @XmlElement(name = "num_finished_tasks")
     public long getNumFinishedTasks() {
 	return numFinishedTasks;
     }
@@ -43,6 +58,7 @@ public class UserInfoDTO extends UserDTO {
 	this.numFinishedTasks = numFinishedTasks;
     }
 
+    @XmlElement(name = "num_finished_delayed_tasks")
     public long getNumFinishedDelayedTasks() {
 	return numFinishedDelayedTasks;
     }
@@ -50,6 +66,10 @@ public class UserInfoDTO extends UserDTO {
     public void setNumFinishedDelayedTasks(long numFinishedDelayedTasks) {
 	this.numFinishedDelayedTasks = numFinishedDelayedTasks;
     }
+
+    // =================================================
+    // toString, equals y hashCode heredados de UserDTO
+    // =================================================
 
     @Override
     public String toString() {

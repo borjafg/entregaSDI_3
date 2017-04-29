@@ -141,4 +141,17 @@
 	</named-query>
 
 
+
+	<!-- ========================= -->
+	<!-- Consultas tercera entrega -->
+	<!-- ========================= -->
+
+	<named-query name="Task.findNotFinishedTasksByCategoryIdSortedByPlannedASC">
+		<query>select t from Task t where
+			t.category.id = :category_id
+			order by t.planned ASC
+		</query>
+	</named-query>
+
+
 </entity-mappings>

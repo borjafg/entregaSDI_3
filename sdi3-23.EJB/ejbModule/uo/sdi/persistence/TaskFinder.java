@@ -206,4 +206,16 @@ public class TaskFinder {
 	}
     }
 
+    public static List<Task> findNotFinishedTasksByCategoryIdSortedByPlannedASC(
+	    Long category_id) {
+
+	return Jpa
+		.getManager()
+		.createNamedQuery(
+			"Task.findNotFinishedTasksByCategoryIdSortedByPlannedASC",
+			Task.class).setParameter("category_id", category_id)
+		.getResultList();
+
+    }
+
 }

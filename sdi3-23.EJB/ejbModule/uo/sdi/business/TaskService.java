@@ -34,7 +34,8 @@ public interface TaskService {
 
     public void deleteTask(Long id) throws BusinessException;
 
-    public void markTaskAsFinished(Long id) throws BusinessException;
+    public void markTaskAsFinished(Long user_id, Long task_id)
+	    throws BusinessException;
 
     public void updateTask(TaskDTO task) throws BusinessException;
 
@@ -64,5 +65,21 @@ public interface TaskService {
 
     public List<TaskDTO> findFinishedInboxTasksByUserId(Long userId)
 	    throws BusinessException;
+
+    // ==============================
+    // Métodos de la tercera entrega
+    // ==============================
+
+    // El método que lista las categorías de un usuario está con los
+    // "métodos relacionados con categorías"
+
+    public List<TaskDTO> findNotFinishedTasksSorterByPlannedASC(Long user_id,
+	    Long category_id) throws BusinessException;
+
+    // El método que marca una tarea como finalizada está con los
+    // "métodos relacionados con tareas"
+
+    // El método que permite crear una nueva tarea está con los
+    // "métodos relacionados con tareas"
 
 }
