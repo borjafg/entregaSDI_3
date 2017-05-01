@@ -27,31 +27,15 @@ public class TaskDTO implements Serializable {
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * Se usa para transformar una categoría en un DTO
-     */
-    TaskDTO(Long id, Date created, Long userId) {
-	this.id = id;
-	this.created = created;
-	this.userId = userId;
-    }
-
-    /**
->>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
      * Se usa para crear una nueva tarea
      */
     public TaskDTO(String title, Long categoryId, Long userId) {
 	this.title = title;
-<<<<<<< HEAD
 
 	if (categoryId != null) {
 	    this.category = new CategoryDTO(categoryId);
 	}
 
-=======
-	this.category = new CategoryDTO(categoryId);
->>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 	this.userId = userId;
     }
 
@@ -127,13 +111,10 @@ public class TaskDTO implements Serializable {
 	return userId;
     }
 
-<<<<<<< HEAD
     public void setUserId(Long userId) {
 	this.userId = userId;
     }
 
-=======
->>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
     // ====================================
     // HashCode, equals y toString
     // ====================================

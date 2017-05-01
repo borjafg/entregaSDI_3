@@ -2,22 +2,16 @@ package uo.sdi.rest.impl;
 
 import java.util.List;
 
-<<<<<<< HEAD
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.core.Response;
 
 import alb.util.log.Log;
-=======
-import javax.ws.rs.InternalServerErrorException;
-
->>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 import uo.sdi.business.exception.BusinessException;
 import uo.sdi.dto.CategoryDTO;
 import uo.sdi.dto.TaskDTO;
 import uo.sdi.infrastructure.Services;
 import uo.sdi.rest.TaskServiceRest;
-<<<<<<< HEAD
 import uo.sdi.rest.requests.FinishTaskRequest;
 import uo.sdi.rest.responses.ListCategoriesResponse;
 import uo.sdi.rest.responses.ListTasksResponse;
@@ -64,43 +58,20 @@ public class TaskServiceRestImpl implements TaskServiceRest {
 	    throw processException(ex, "Ha ocurrido un error al listar las "
 		    + "categorías del usuario con user_id = [" + user_id + "]",
 		    "rest_error_grave__listado_categorias");
-=======
-
-public class TaskServiceRestImpl implements TaskServiceRest {
-
-    @Override
-    public List<CategoryDTO> findCategoriesByUserId(Long user_id) {
-	try {
-	    return Services.getServicesFactory().getTaskService()
-		    .findCategoriesByUserId(user_id);
-	}
-
-	catch (BusinessException bs) {
-	    throw new InternalServerErrorException("De momento hacer así");
->>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 	}
     }
 
     @Override
-<<<<<<< HEAD
     public Response findNotFinishedTasksSortedFromOldestToMostRecent(
 	    Long user_id, Long category_id) {
 
 	try {
 	    // (1) Buscar las tareas
 	    List<TaskDTO> tareas = Services
-=======
-    public List<TaskDTO> findNotFinishedTasksSortedFromOldestToMostRecent(
-	    Long user_id, Long category_id) {
-
-	try {
-	    return Services
->>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 		    .getServicesFactory()
 		    .getTaskService()
 		    .findNotFinishedTasksSorterByPlannedASC(user_id,
 			    category_id);
-<<<<<<< HEAD
 
 	    // (2) Darle formato al resultado de la búsqueda
 	    ListTasksResponse tasks = new ListTasksResponse();
@@ -123,17 +94,10 @@ public class TaskServiceRestImpl implements TaskServiceRest {
 	    throw processException(ex, "Ha ocurrido un error al listar las "
 		    + "tareas de la categoria con id [" + category_id + "]",
 		    "rest_error_grave__listado_tareas");
-=======
-	}
-
-	catch (BusinessException bs) {
-	    throw new InternalServerErrorException("De momento hacer así");
->>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 	}
     }
 
     @Override
-<<<<<<< HEAD
     public void markAsFinished(FinishTaskRequest infoTask) {
 	try {
 	    Services.getServicesFactory()
@@ -151,16 +115,6 @@ public class TaskServiceRestImpl implements TaskServiceRest {
 	    throw processException(ex, "Ha ocurrido un error al intentar "
 		    + "finalizar la tarea con id [" + infoTask.getTask_id()
 		    + "]", "rest_error_grave__finalizar_tarea");
-=======
-    public void markAsFinished(Long task_id, Long user_id) {
-	try {
-	    Services.getServicesFactory().getTaskService()
-		    .markTaskAsFinished(user_id, task_id);
-	}
-
-	catch (BusinessException bs) {
-	    throw new InternalServerErrorException("De momento hacer así");
->>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 	}
     }
 
@@ -171,7 +125,6 @@ public class TaskServiceRestImpl implements TaskServiceRest {
 	}
 
 	catch (BusinessException bs) {
-<<<<<<< HEAD
 	    throw processsBusinessException(bs,
 		    "No se ha podido crear la nueva tarea.");
 	}
@@ -245,10 +198,4 @@ public class TaskServiceRestImpl implements TaskServiceRest {
 	return new InternalServerErrorException(response);
     }
 
-=======
-	    throw new InternalServerErrorException("De momento hacer así");
-	}
-    }
-
->>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 }
