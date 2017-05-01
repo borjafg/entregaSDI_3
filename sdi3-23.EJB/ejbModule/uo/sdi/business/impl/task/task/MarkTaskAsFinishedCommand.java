@@ -25,12 +25,19 @@ public class MarkTaskAsFinishedCommand implements Command<Void> {
 	Task t = TaskFinder.findById(task_id);
 	User u = UserFinder.findById(user_id);
 
+<<<<<<< HEAD
 	BusinessCheck.isNotNull(t, "La tarea que se pretende marcar como "
 		+ "finalizada no existe",
 		"error_finalizacion_tarea__tarea_no_existe");
 
 	BusinessCheck.isNotNull(u, "El usuario que intenta finalizar la tarea "
 		+ "no existe", "error_finalizacion_tarea__usuario_no_existe");
+=======
+	BusinessCheck
+		.isNotNull(t, "La tarea que se pretende marcar como "
+			+ "finalizada no existe",
+			"error_finalizacion_tarea__no_existe");
+>>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 
 	BusinessCheck.isTrue(u.getStatus().equals(UserStatus.ENABLED),
 		"No se puede finalizar la tarea porque el usuario asociado "

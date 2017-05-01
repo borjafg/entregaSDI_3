@@ -1,5 +1,6 @@
 package uo.sdi.menu;
 
+<<<<<<< HEAD
 import javax.ws.rs.BadRequestException;
 
 import uo.sdi.menu.actions.CreateNewTaskAction;
@@ -10,12 +11,17 @@ import uo.sdi.menu.util.ErrorResponseProcessor;
 import uo.sdi.menu.util.Input;
 import uo.sdi.rest.RestClient;
 import uo.sdi.rest.exceptions.FailToAuthorizedException;
+=======
+import uo.sdi.rest.RestClient;
+import uo.sdi.util.Input;
+>>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 import alb.util.console.Console;
 import alb.util.log.Log;
 import alb.util.menu.BaseMenu;
 
 public class MainMenu extends BaseMenu {
 
+<<<<<<< HEAD
     public MainMenu() {
 	menuOptions = new Object[][] {
 		{ "Menú de usuario -- REST", null },
@@ -49,19 +55,25 @@ public class MainMenu extends BaseMenu {
 	} while (opt != 0);
     }
 
+=======
+>>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
     @Override
     public void execute() {
 	try {
 	    String intentarLoguearse = "si";
 
 	    do {
+<<<<<<< HEAD
 		Console.println("====================");
 		Console.println();
+=======
+>>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 		Console.println("Inicie sesión para continuar\n");
 
 		String login = Input.pedirString("Nombre de usuario");
 		String password = Input.pedirString("Contraseña");
 
+<<<<<<< HEAD
 		try {
 		    RestClient.doLogin(login, password);
 		    RestClient.inicializeTaskService();
@@ -80,6 +92,21 @@ public class MainMenu extends BaseMenu {
 			    + "volver a intentar loguearse? (si/no)");
 
 		    Console.println();
+=======
+		boolean exito = RestClient.doLogin(login, password);
+
+		if (exito) {
+		    // super.execute();
+		    break;
+		}
+
+		else {
+		    Console.println("El usuario o contraseña "
+			    + "indicados no son correctos");
+
+		    intentarLoguearse = Input.pedirConfirmacion("¿Desea "
+			    + "volver a intentar loguearse? (si/no)");
+>>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 		}
 	    } while (intentarLoguearse.equals("si"));
 	}

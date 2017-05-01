@@ -1,17 +1,21 @@
 package uo.sdi.menu.actions;
 
+<<<<<<< HEAD
 import java.util.Date;
 
 import uo.sdi.dto.TaskDTO;
 import uo.sdi.menu.util.Input;
 import uo.sdi.rest.RestClient;
 import alb.util.console.Console;
+=======
+>>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
 import alb.util.menu.Action;
 
 public class CreateNewTaskAction implements Action {
 
     @Override
     public void execute() throws Exception {
+<<<<<<< HEAD
 	Console.println();
 
 	// ==================================
@@ -52,6 +56,10 @@ public class CreateNewTaskAction implements Action {
 	RestClient.getTaskService().createNewTask(task);
 
 	Console.println("\nSe ha creado con éxito la tarea");
+=======
+	// TODO Auto-generated method stub
+
+>>>>>>> 622bef857d0c655af153cebdba985cc0a47b63c4
     }
 
 }
