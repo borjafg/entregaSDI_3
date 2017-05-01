@@ -1,0 +1,12 @@
+C:\Users\Alumno\Desktop\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\sdi3-23.Cli-SOAPcsharp.exe.config
+C:\Users\Alumno\Desktop\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\sdi3-23.Cli-SOAPcsharp.exe
+C:\Users\Alumno\Desktop\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\sdi3-23.Cli-SOAPcsharp.pdb
+C:\Users\Alumno\Desktop\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\obj\Debug\sdi3-23.Cli-SOAPcsharp.csprojResolveAssemblyReference.cache
+C:\Users\Alumno\Desktop\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\obj\Debug\sdi3-23.Cli-SOAPcsharp.exe
+C:\Users\Alumno\Desktop\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\obj\Debug\sdi3-23.Cli-SOAPcsharp.pdb
+F:\SDI\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\sdi3-23.Cli-SOAPcsharp.exe.config
+F:\SDI\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\obj\Debug\sdi3-23.Cli-SOAPcsharp.exe
+F:\SDI\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\obj\Debug\sdi3-23.Cli-SOAPcsharp.pdb
+D:\Fernando\Grado en ingenieria informatica de Software\Tercer Año\SDI\TercerEntregable\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\sdi3-23.Cli-SOAPcsharp.exe.config
+D:\Fernando\Grado en ingenieria informatica de Software\Tercer Año\SDI\TercerEntregable\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\obj\Debug\sdi3-23.Cli-SOAPcsharp.exe
+D:\Fernando\Grado en ingenieria informatica de Software\Tercer Año\SDI\TercerEntregable\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\obj\Debug\sdi3-23.Cli-SOAPcsharp.pdb
