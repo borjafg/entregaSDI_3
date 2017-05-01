@@ -11,6 +11,7 @@ import uo.sdi.business.exception.BusinessException;
 import uo.sdi.dto.TaskDTO;
 import uo.sdi.infrastructure.Services;
 import uo.sdi.presentation.util.MessageManager;
+import uo.sdi.presentation.util.UserInfo;
 
 public abstract class AbstractBeanListTasks {
 
@@ -25,11 +26,14 @@ public abstract class AbstractBeanListTasks {
     public String terminarTarea(Long idTarea) {
 	FacesContext context = FacesContext.getCurrentInstance();
 
+	UserInfo user = (UserInfo) context.getExternalContext().getSessionMap()
+		.get("user");
+
 	try {
 	    TaskService taskServ = Services.getServicesFactory()
 		    .getTaskService();
 
-	    taskServ.markTaskAsFinished(idTarea);
+	    taskServ.markTaskAsFinished(user.getId(), idTarea);
 
 	    Log.debug("Se ha marcado como finalizada la tarea con id [%d]",
 		    idTarea);

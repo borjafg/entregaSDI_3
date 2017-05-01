@@ -2,5 +2,30 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="resteasy_libs/activation-1.1.1.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/commons-io-2.1.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/FastInfoset-1.2.12.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/httpclient-4.3.6.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/httpcore-4.3.3.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/istack-commons-runtime-2.16.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jackson-core-asl-1.9.12.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jackson-jaxrs-1.9.12.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jackson-mapper-asl-1.9.12.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jackson-xc-1.9.12.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jaxb-api-2.2.7.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jaxb-core-2.2.7.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jaxb-impl-2.2.7.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jboss-annotations-api_1.2_spec-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jboss-jaxrs-api_2.0_spec-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jboss-logging-3.1.4.GA.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jcip-annotations-1.0.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/jsr173_api-1.0.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/resteasy-client-3.0.16.Final.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/resteasy-jackson-provider-3.0.16.Final.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/resteasy-jaxb-provider-3.0.16.Final.jar"/>
+	<classpathentry kind="lib" path="resteasy_libs/resteasy-jaxrs-3.0.16.Final.jar"/>
+	<classpathentry kind="lib" path="lib/albUtilJ7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,5 +1,6 @@
 package uo.sdi.business.impl.task.task;
 
+import uo.sdi.business.exception.BusinessCheck;
 import uo.sdi.business.exception.BusinessException;
 import uo.sdi.business.impl.command.Command;
 import uo.sdi.business.impl.util.TaskCheck;
@@ -8,6 +9,7 @@ import uo.sdi.model.Category;
 import uo.sdi.model.Task;
 import uo.sdi.model.User;
 import uo.sdi.persistence.CategoryFinder;
+import uo.sdi.persistence.TaskFinder;
 import uo.sdi.persistence.UserFinder;
 import uo.sdi.persistence.util.Jpa;
 
@@ -24,8 +26,16 @@ public class CreateTaskCommand implements Command<Task> {
 	User user = UserFinder.findById(taskDTO.getUserId());
 
 	TaskCheck.isUserValid(user);
+
 	TaskCheck.titleIsNotNull(taskDTO);
 	TaskCheck.titleIsNotEmpty(taskDTO);
+
+	Task t = TaskFinder.findByTitleAndUserId(taskDTO.getTitle(),
+		taskDTO.getUserId());
+
+	BusinessCheck.isNull(t, "No se puede crear la nueva tarea [title = "
+		+ taskDTO.getTitle() + "] porque ya existe otra tarea con "
+		+ "ese título.", "error_creacion_tarea__ya_existe");
 
 	Task task = new Task(taskDTO.getTitle(), user);
 
@@ -38,6 +48,10 @@ public class CreateTaskCommand implements Command<Task> {
 		    .getId());
 
 	    TaskCheck.categoryExists(categ);
+	    BusinessCheck.isTrue(categ.getUser().getId().equals(user.getId()),
+		    "La categoría a la que se intenta asignar la tarea no "
+			    + "pertenece a este usuario",
+		    "error_creacion_edicion_tarea__categoria_no_existe");
 
 	    task.setCategory(categ);
 	}

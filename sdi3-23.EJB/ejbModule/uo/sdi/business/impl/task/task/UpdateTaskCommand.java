@@ -21,9 +21,6 @@ public class UpdateTaskCommand implements Command<Void> {
 
     @Override
     public Void execute() throws BusinessException {
-	TaskCheck.titleIsNotNull(taskDTO);
-	TaskCheck.titleIsNotEmpty(taskDTO);
-
 	Task task = TaskFinder.findById(taskDTO.getId());
 
 	usuarioCoincideTarea(task);
@@ -31,6 +28,17 @@ public class UpdateTaskCommand implements Command<Void> {
 	BusinessCheck.isNotNull(task, "La tarea [id=" + taskDTO.getId()
 		+ "] cuyos datos se intentan modificar no existe",
 		"error_creacion_edicion_tarea__no_existe");
+
+	TaskCheck.titleIsNotNull(taskDTO);
+	TaskCheck.titleIsNotEmpty(taskDTO);
+
+	Task t = TaskFinder.findByTitleAndUserId(taskDTO.getTitle(),
+		taskDTO.getUserId());
+
+	BusinessCheck.isNull(t, "No se puede editar la nueva tarea [title = "
+		+ task.getTitle() + "] porque ya existe otra tarea con ese "
+		+ "título [" + taskDTO.getTitle() + "].",
+		"error_creacion_tarea__ya_existe");
 
 	task.setTittle(taskDTO.getTitle());
 	task.setComments(taskDTO.getComments());
@@ -47,6 +55,12 @@ public class UpdateTaskCommand implements Command<Void> {
 			+ " asociar a la tarea [id=" + taskDTO.getId() + "] no"
 			+ " existe",
 			"error_creacion_edicion_tarea__categoria_no_existe");
+
+		BusinessCheck.isTrue(
+			categ.getUser().getId().equals(task.getUser().getId()),
+			"La categoría a la que se intenta asignar la "
+				+ "tarea no pertenece a este usuario",
+			"error_creacion_edicion_tarea__categoria_no_existe");
 	    }
 
 	    task.setCategory(categ);
@@ -58,7 +72,8 @@ public class UpdateTaskCommand implements Command<Void> {
     }
 
     private void usuarioCoincideTarea(Task task) throws BusinessException {
-	BusinessCheck.isTrue(task.getId().equals(taskDTO.getId()),
+	BusinessCheck.isTrue(
+		task.getUser().getId().equals(taskDTO.getUserId()),
 		"El usuario de la tarea que se intenta modificar no coincide"
 			+ " con el usuario de la tarea que está almacenado en"
 			+ " la base de datos.",

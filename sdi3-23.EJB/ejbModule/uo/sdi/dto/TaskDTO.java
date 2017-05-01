@@ -3,12 +3,14 @@ package uo.sdi.dto;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "task")
 public class TaskDTO implements Serializable {
 
     private static final long serialVersionUID = -4452890417360L;
 
-    // Tiene que ser accesible a la clase
-    // que convierte un task en un TaskDTO
     private Long id;
 
     private String title;
@@ -19,6 +21,10 @@ public class TaskDTO implements Serializable {
 
     private CategoryDTO category;
     private Long userId;
+
+    public TaskDTO() {
+
+    }
 
     /**
      * Se usa para transformar una categoría en un DTO
@@ -34,7 +40,11 @@ public class TaskDTO implements Serializable {
      */
     public TaskDTO(String title, Long categoryId, Long userId) {
 	this.title = title;
-	this.category = new CategoryDTO(categoryId);
+
+	if (categoryId != null) {
+	    this.category = new CategoryDTO(categoryId);
+	}
+
 	this.userId = userId;
     }
 
@@ -42,10 +52,16 @@ public class TaskDTO implements Serializable {
     // Getters y Setters
     // ===================================
 
+    @XmlElement(name = "id")
     public Long getId() {
 	return id;
     }
 
+    public void setId(Long id) {
+	this.id = id;
+    }
+
+    @XmlElement(name = "title")
     public String getTitle() {
 	return title;
     }
@@ -54,6 +70,7 @@ public class TaskDTO implements Serializable {
 	this.title = title;
     }
 
+    @XmlElement(name = "comments")
     public String getComments() {
 	return comments;
     }
@@ -62,10 +79,12 @@ public class TaskDTO implements Serializable {
 	this.comments = comments;
     }
 
+    @XmlElement(name = "created")
     public Date getCreated() {
 	return created;
     }
 
+    @XmlElement(name = "planned")
     public Date getPlanned() {
 	return planned;
     }
@@ -74,6 +93,7 @@ public class TaskDTO implements Serializable {
 	this.planned = planned;
     }
 
+    @XmlElement(name = "finished")
     public Date getFinished() {
 	return finished;
     }
@@ -82,6 +102,7 @@ public class TaskDTO implements Serializable {
 	this.finished = finished;
     }
 
+    @XmlElement(name = "category")
     public CategoryDTO getCategory() {
 	return category;
     }
@@ -94,6 +115,7 @@ public class TaskDTO implements Serializable {
 	this.category = new CategoryDTO(idCategory);
     }
 
+    @XmlElement(name = "user_id")
     public Long getUserId() {
 	return userId;
     }

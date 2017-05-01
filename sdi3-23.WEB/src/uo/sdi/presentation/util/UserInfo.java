@@ -3,7 +3,7 @@ package uo.sdi.presentation.util;
 import java.io.Serializable;
 
 import uo.sdi.dto.UserDTO;
-import uo.sdi.model.types.UserStatus;
+import uo.sdi.dto.types.UserStatusDTO;
 
 public class UserInfo implements Serializable {
 
@@ -15,7 +15,7 @@ public class UserInfo implements Serializable {
     private String email;
     private Boolean isAdmin;
 
-    private UserStatus status;
+    private UserStatusDTO status;
 
     public UserInfo(UserDTO user) {
 	this.id = user.getId();
@@ -55,11 +55,11 @@ public class UserInfo implements Serializable {
 	this.isAdmin = isAdmin;
     }
 
-    public UserStatus getStatus() {
+    public UserStatusDTO getStatus() {
 	return status;
     }
 
-    public void setStatus(UserStatus status) {
+    public void setStatus(UserStatusDTO status) {
 	this.status = status;
     }
 

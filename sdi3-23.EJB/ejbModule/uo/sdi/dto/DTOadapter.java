@@ -3,9 +3,11 @@ package uo.sdi.dto;
 import java.util.ArrayList;
 import java.util.List;
 
+import uo.sdi.dto.types.UserStatusDTO;
 import uo.sdi.model.Category;
 import uo.sdi.model.Task;
 import uo.sdi.model.User;
+import uo.sdi.model.types.UserStatus;
 
 /**
  * Transforma objetos del modelo de dominio en objetos DTO, que son con los que
@@ -89,6 +91,21 @@ public class DTOadapter {
 	}
 
 	return lista;
+    }
+
+    public static UserStatusDTO parseStatusToDTO(UserStatus status) {
+	if (status == UserStatus.ENABLED) {
+	    return UserStatusDTO.ENABLED;
+	}
+
+	else if (status == UserStatus.DISABLED) {
+	    return UserStatusDTO.DISABLED;
+	}
+
+	else {
+	    throw new IllegalArgumentException("Ese estado "
+		    + "de una cuenta de usuario no es válido");
+	}
     }
 
 }

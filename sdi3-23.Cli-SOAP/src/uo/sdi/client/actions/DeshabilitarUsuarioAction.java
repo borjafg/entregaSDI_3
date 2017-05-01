@@ -12,6 +12,7 @@ public class DeshabilitarUsuarioAction implements Action {
     @Override
     public void execute() throws Exception {
 	Long id;
+
 	try {
 	    id = Input.pedirLong("Escribe el identificador del"
 		    + "usuario que hay que deshabilitar");

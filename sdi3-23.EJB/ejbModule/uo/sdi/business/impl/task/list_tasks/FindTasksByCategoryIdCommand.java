@@ -24,7 +24,7 @@ public class FindTasksByCategoryIdCommand implements Command<List<TaskDTO>> {
 
 	BusinessCheck.isNotNull(categ, "No se pueden listar las tareas de esta"
 		+ " categoría porque no existe.",
-		"error_listado_tareas_categoria__no_existe");
+		"error_listado_tareas_categoria__no_existe_categoria");
 
 	return DTOadapter.tasksToDTO(categ.getTasks());
     }

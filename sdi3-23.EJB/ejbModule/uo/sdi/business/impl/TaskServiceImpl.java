@@ -15,6 +15,7 @@ import uo.sdi.business.impl.task.category.UpdateCategoryCommand;
 import uo.sdi.business.impl.task.list_tasks.FindFinishedInboxByUserIdCommand;
 import uo.sdi.business.impl.task.list_tasks.FindFinishedTasksByCategoryIdCommand;
 import uo.sdi.business.impl.task.list_tasks.FindInboxTaskByUserIdCommand;
+import uo.sdi.business.impl.task.list_tasks.FindNotFinishedTasksSortedByPlannedASC;
 import uo.sdi.business.impl.task.list_tasks.FindTasksByCategoryIdCommand;
 import uo.sdi.business.impl.task.list_tasks.FindTodayTasksByUserIdCommand;
 import uo.sdi.business.impl.task.list_tasks.FindUnfinishedTasksByCategoryIdCommand;
@@ -90,8 +91,10 @@ public class TaskServiceImpl implements LocalTaskService, RemoteTaskService {
     }
 
     @Override
-    public void markTaskAsFinished(final Long id) throws BusinessException {
-	new MarkTaskAsFinishedCommand(id).execute();
+    public void markTaskAsFinished(final Long user_id, final Long task_id)
+	    throws BusinessException {
+
+	new MarkTaskAsFinishedCommand(user_id, task_id).execute();
     }
 
     @Override
@@ -155,6 +158,18 @@ public class TaskServiceImpl implements LocalTaskService, RemoteTaskService {
 	    throws BusinessException {
 
 	return new FindFinishedInboxByUserIdCommand(userId).execute();
+    }
+
+    // ==============================
+    // Métodos de la tercera entrega
+    // ==============================
+
+    @Override
+    public List<TaskDTO> findNotFinishedTasksSorterByPlannedASC(Long user_id,
+	    Long category_id) throws BusinessException {
+
+	return new FindNotFinishedTasksSortedByPlannedASC(user_id, category_id)
+		.execute();
     }
 
 }

@@ -36,6 +36,29 @@ public class TaskFinder {
     }
 
     /**
+     * Busca una tarea por su título y el usuario al que pertenece.
+     * 
+     * @param title
+     *            título de la tarea
+     * @param userId
+     *            identificador del usuario
+     * 
+     * @return la tarea si existe, null en caso contrario.
+     */
+    public static Task findByTitleAndUserId(String title, Long userId) {
+	try {
+	    return Jpa.getManager()
+		    .createNamedQuery("Task.findByTitleAndUserId", Task.class)
+		    .setParameter("title", title)
+		    .setParameter("userId", userId).getSingleResult();
+	}
+
+	catch (NoResultException nre) {
+	    return null;
+	}
+    }
+
+    /**
      * Devuelve todas las tareas no finalizadas y no planificadas por el usuario
      * (categoria inbox; es decir, categoria = null).
      * 
@@ -204,6 +227,18 @@ public class TaskFinder {
 		    "Ha ocurrido un error al buscar el número de tareas "
 			    + "finalizadas y retrasadas de un usuario", nre);
 	}
+    }
+
+    public static List<Task> findNotFinishedTasksByCategoryIdSortedByPlannedASC(
+	    Long category_id) {
+
+	return Jpa
+		.getManager()
+		.createNamedQuery(
+			"Task.findNotFinishedTasksByCategoryIdSortedByPlannedASC",
+			Task.class).setParameter("category_id", category_id)
+		.getResultList();
+
     }
 
 }

@@ -38,6 +38,13 @@
 		<query>select t from Task t where t.user.id = :userId</query>
 	</named-query>
 
+	<named-query name="Task.findByTitleAndUserId">
+		<query>select t from Task t where
+			t.title = :title and
+			t.user.id = :userId
+		</query>
+	</named-query>
+
 	<named-query name="Task.findInboxTasksByUserId">
 		<query>select t from Task t where
 			t.user.id = :userId and
@@ -138,6 +145,19 @@
 		<query>select u from User u where
 			u.login = :login and
 			u.password = :password</query>
+	</named-query>
+
+
+
+	<!-- ========================= -->
+	<!-- Consultas tercera entrega -->
+	<!-- ========================= -->
+
+	<named-query name="Task.findNotFinishedTasksByCategoryIdSortedByPlannedASC">
+		<query>select t from Task t where
+			t.category.id = :category_id
+			order by t.planned ASC
+		</query>
 	</named-query>
 
 
