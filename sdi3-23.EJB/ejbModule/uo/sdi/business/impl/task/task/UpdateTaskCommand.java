@@ -32,14 +32,6 @@ public class UpdateTaskCommand implements Command<Void> {
 	TaskCheck.titleIsNotNull(taskDTO);
 	TaskCheck.titleIsNotEmpty(taskDTO);
 
-	Task t = TaskFinder.findByTitleAndUserId(taskDTO.getTitle(),
-		taskDTO.getUserId());
-
-	BusinessCheck.isNull(t, "No se puede editar la nueva tarea [title = "
-		+ task.getTitle() + "] porque ya existe otra tarea con ese "
-		+ "título [" + taskDTO.getTitle() + "].",
-		"error_creacion_tarea__ya_existe");
-
 	task.setTittle(taskDTO.getTitle());
 	task.setComments(taskDTO.getComments());
 

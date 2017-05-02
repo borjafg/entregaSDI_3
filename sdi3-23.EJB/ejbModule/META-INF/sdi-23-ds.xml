@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE XML>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema">
+
+	<datasource jndi-name="java:jboss/datasources/task_manager-23-ds"
+		enabled="true" use-java-context="true" pool-name="taskManagerDS-23">
+
+		<connection-url>jdbc:hsqldb:hsql://localhost/notaneitordb
+		</connection-url>
+
+		<driver>hsqldb.jar</driver>
+		<pool></pool>
+
+		<security>
+			<user-name>sa</user-name>
+			<password></password>
+		</security>
+
+	</datasource>
+
+</datasources>

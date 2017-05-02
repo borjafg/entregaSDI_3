@@ -9,7 +9,6 @@ import uo.sdi.model.Category;
 import uo.sdi.model.Task;
 import uo.sdi.model.User;
 import uo.sdi.persistence.CategoryFinder;
-import uo.sdi.persistence.TaskFinder;
 import uo.sdi.persistence.UserFinder;
 import uo.sdi.persistence.util.Jpa;
 
@@ -29,13 +28,6 @@ public class CreateTaskCommand implements Command<Task> {
 
 	TaskCheck.titleIsNotNull(taskDTO);
 	TaskCheck.titleIsNotEmpty(taskDTO);
-
-	Task t = TaskFinder.findByTitleAndUserId(taskDTO.getTitle(),
-		taskDTO.getUserId());
-
-	BusinessCheck.isNull(t, "No se puede crear la nueva tarea [title = "
-		+ taskDTO.getTitle() + "] porque ya existe otra tarea con "
-		+ "ese título.", "error_creacion_tarea__ya_existe");
 
 	Task task = new Task(taskDTO.getTitle(), user);
 

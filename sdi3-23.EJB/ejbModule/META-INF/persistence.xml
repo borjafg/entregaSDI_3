@@ -5,9 +5,9 @@
     http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
 
-	<persistence-unit name="sdi_unit" transaction-type="JTA">
+	<persistence-unit name="sdi_unit_23" transaction-type="JTA">
 
-		<jta-data-source>java:jboss/datasources/NotaneitorDS</jta-data-source>
+		<jta-data-source>java:jboss/datasources/task_manager-23-ds</jta-data-source>
 
 		<class>uo.sdi.model.Category</class>
 		<class>uo.sdi.model.Task</class>
