@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace sdi3_23.Cli_SOAPcsharp
 {
-    class ListarUsuariosAction
+    class ListarUsuariosAction : Accion
     {
         public void execute()
         {
-            long id;
-            try
-            {
-                id = 
-            }
+            Consola.println("probando el menu listar usuarios");
+          
         }
 
 
