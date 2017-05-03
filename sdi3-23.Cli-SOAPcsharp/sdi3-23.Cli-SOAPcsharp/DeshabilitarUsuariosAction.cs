@@ -11,6 +11,11 @@ namespace sdi3_23.Cli_SOAPcsharp
         public void execute()
         {
             Consola.println("probando el menu deshabilitar usuarios");
+            long id = Input.pedirLong("Escriba el identificador del usuario que hay que deshabilitar");
+
+            ServiceSoap.AdminServiceImplService servicio = new ServiceSoap.AdminServiceImplService();
+            servicio.disableUser(id,true);
+            Consola.println("Exito al deshabilitar a un usuario");
         }
     }
 }

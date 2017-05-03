@@ -17,7 +17,7 @@ namespace sdi3_23.Cli_SOAPcsharp
         public MainMenu()
         {
             
-            titulo = "Menú administrador EJB";            
+            titulo = "Menu administrador EJB";            
 
             opciones.Add("Listar usuarios");
             acciones.Add(new ListarUsuariosAction());
@@ -53,7 +53,7 @@ namespace sdi3_23.Cli_SOAPcsharp
                     }
                 }catch(NullReferenceException nre)
                 {
-                    Log.trace("el usuario ha seleccionado una opción inválida");
+                    Log.trace("el usuario ha seleccionado una opcion invalida");
                     Log.trace(nre);
                     opcion = -1;
                 }
@@ -73,6 +73,7 @@ namespace sdi3_23.Cli_SOAPcsharp
             }
 
             Consola.println("\t 0 - Salir");
+            Consola.println("\nSelecciones una opcion:");
         }
     }
 }

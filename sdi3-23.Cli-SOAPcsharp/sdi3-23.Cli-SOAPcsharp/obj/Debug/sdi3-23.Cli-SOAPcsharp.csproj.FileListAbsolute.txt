@@ -31,3 +31,27 @@ D:\Fernando\Grado en ingenieria informatica de Software\Tercer Año\SDI\TercerEn
 D:\Fernando\Grado en ingenieria informatica de Software\Tercer Año\SDI\TercerEntregable\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.AWT.WinForms.dll
 D:\Fernando\Grado en ingenieria informatica de Software\Tercer Año\SDI\TercerEntregable\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Charsets.dll
 D:\Fernando\Grado en ingenieria informatica de Software\Tercer Año\SDI\TercerEntregable\SDIClienteSoap\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Misc.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\sdi3-23.Cli-SOAPcsharp.exe.config
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\obj\Debug\sdi3-23.Cli-SOAPcsharp.exe
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\obj\Debug\sdi3-23.Cli-SOAPcsharp.pdb
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\sdi3-23.Cli-SOAPcsharp.exe
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\sdi3-23.Cli-SOAPcsharp.pdb
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\albUtil.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Core.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.Runtime.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Text.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Util.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Security.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.XML.API.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.Runtime.JNI.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Management.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Naming.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.SwingAWT.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Remoting.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Corba.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Beans.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Media.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.AWT.WinForms.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Charsets.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\bin\Debug\IKVM.OpenJDK.Misc.dll
+C:\Users\admin\Documents\GitHub\SDI\entregaSDI_3\sdi3-23.Cli-SOAPcsharp\sdi3-23.Cli-SOAPcsharp\obj\Debug\sdi3-23.Cli-SOAPcsharp.csprojResolveAssemblyReference.cache
