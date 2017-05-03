@@ -2,7 +2,7 @@ package uo.sdi.business.impl.admin;
 
 import uo.sdi.business.exception.BusinessCheck;
 import uo.sdi.business.exception.BusinessException;
-import uo.sdi.business.impl.command.Command;
+import uo.sdi.business.impl.Command;
 import uo.sdi.model.User;
 import uo.sdi.persistence.UserFinder;
 import uo.sdi.persistence.util.Jpa;

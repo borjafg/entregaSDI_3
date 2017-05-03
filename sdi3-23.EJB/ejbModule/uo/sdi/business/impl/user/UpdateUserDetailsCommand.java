@@ -2,7 +2,7 @@ package uo.sdi.business.impl.user;
 
 import uo.sdi.business.exception.BusinessCheck;
 import uo.sdi.business.exception.BusinessException;
-import uo.sdi.business.impl.command.Command;
+import uo.sdi.business.impl.Command;
 import uo.sdi.business.impl.util.UserCheck;
 import uo.sdi.dto.UserDTO;
 import uo.sdi.model.User;

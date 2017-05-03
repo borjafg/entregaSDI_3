@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE XML>
 <messaging-deployment xmlns="urn:jboss:messaging-deployment:1.0">
 
 	<hornetq-server>
 		<jms-destinations>
 
 			<jms-queue name="canal_comandos_sdi_23">
-				<entry name="jms/queue/canal_comandos_sdi_23" />
+				<entry name="queue/canal_comandos_sdi_23" />
 				<entry name="java:jboss/exported/jms/queue/canal_comandos_sdi_23" />
 			</jms-queue>
 
 			<jms-queue name="canal_log_sdi_23">
-				<entry name="jms/queue/canal_log_sdi_23" />
+				<entry name="queue/canal_log_sdi_23" />
 				<entry name="java:jboss/exported/jms/queue/canal_log_sdi_23" />
 			</jms-queue>
 

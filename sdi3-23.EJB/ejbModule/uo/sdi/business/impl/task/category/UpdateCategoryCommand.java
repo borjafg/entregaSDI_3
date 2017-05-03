@@ -2,7 +2,7 @@ package uo.sdi.business.impl.task.category;
 
 import uo.sdi.business.exception.BusinessCheck;
 import uo.sdi.business.exception.BusinessException;
-import uo.sdi.business.impl.command.Command;
+import uo.sdi.business.impl.Command;
 import uo.sdi.business.impl.util.CategoryCheck;
 import uo.sdi.dto.CategoryDTO;
 import uo.sdi.model.Category;

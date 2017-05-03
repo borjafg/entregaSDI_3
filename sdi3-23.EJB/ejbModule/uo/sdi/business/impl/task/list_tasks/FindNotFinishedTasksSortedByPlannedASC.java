@@ -4,7 +4,7 @@ import java.util.List;
 
 import uo.sdi.business.exception.BusinessCheck;
 import uo.sdi.business.exception.BusinessException;
-import uo.sdi.business.impl.command.Command;
+import uo.sdi.business.impl.Command;
 import uo.sdi.dto.DTOadapter;
 import uo.sdi.dto.TaskDTO;
 import uo.sdi.model.Category;

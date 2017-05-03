@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import uo.sdi.business.exception.BusinessException;
-import uo.sdi.business.impl.command.Command;
+import uo.sdi.business.impl.Command;
 import uo.sdi.dto.UserInfoDTO;
 import uo.sdi.model.User;
 import uo.sdi.persistence.TaskFinder;
