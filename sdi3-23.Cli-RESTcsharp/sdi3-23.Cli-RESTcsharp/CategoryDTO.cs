@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 namespace sdi3_23.Cli_RESTcsharp
 {
     [XmlRoot("category")]
-    class CategoryDTO
+   public class CategoryDTO
     {
         [XmlElement(ElementName = "id")]
         public long id { get; set; }

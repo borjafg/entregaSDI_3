@@ -23,20 +23,27 @@ namespace sdi3_23.Cli_RESTcsharp
 
         public static void inicializar()
         {
-
-            Console.WriteLine("excriba login");
-            string login = Console.ReadLine();
-            Console.WriteLine("excriba login");
-            string pass = Console.ReadLine();
-            GetLogin(login, pass);
+            bool reg = false;
+            do
+            {
+                Console.WriteLine("excriba login");
+                string login = Console.ReadLine();
+                Console.WriteLine("excriba password");
+                string pass = Console.ReadLine();
+                reg = GetLogin(login, pass);
+                if (reg == false)
+                {
+                    Consola.println("Usuario incorrecto, intentelo de nuevo");
+                }
+            } while (reg == false);
 
 
         }
 
 
-        public static  void GetLogin(string login, string pass)
+        public static bool GetLogin(string login, string pass)
         {
-            
+
 
             String credenciales = login + " - " + pass;
             String credencialesCifradas = Encryptor.encrypt(credenciales);
@@ -62,7 +69,6 @@ namespace sdi3_23.Cli_RESTcsharp
 
                     responseText = reader.ReadToEnd();
 
-                    Console.WriteLine(responseText);
 
                     response.Close();
 
@@ -78,30 +84,35 @@ namespace sdi3_23.Cli_RESTcsharp
                     }
 
                     Console.WriteLine(usuario.toString());
+                    return true;
                 }
 
-            }catch(WebException we)
+            }
+            catch (WebException we)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(we.ToString());
-                Console.ResetColor();
-            }catch(Exception e)
+
+                Log.error(we.ToString());
+
+                return false;
+            }
+            catch (Exception e)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(e.ToString());
-                Console.ResetColor();
-            }        
+
+                Log.error(e.ToString());
+
+                return false;
+            }
         }
 
 
 
 
-        public static void findCategoriesByUserId(long id)
+        public static void findCategoriesByUserId()
         {
-            string filtro = new Authenticator(usuario.login,password).filter();
+            string filtro = new Authenticator(usuario.login, password).filter();
 
-            HttpWebRequest request = WebRequest.Create("http://localhost:8280/sdi3-23.WEB/rest/task/list_categories/" + id.ToString()) as HttpWebRequest;
-            request.Headers.Add(HttpRequestHeader.Authorization,filtro);
+            HttpWebRequest request = WebRequest.Create("http://localhost:8280/sdi3-23.WEB/rest/task/list_categories/"+usuario.id) as HttpWebRequest;
+            request.Headers.Add(HttpRequestHeader.Authorization, filtro);
 
             request.ContentType = "application/xml";
             request.Accept = "application/xml";

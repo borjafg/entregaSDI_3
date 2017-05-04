@@ -8,10 +8,12 @@ using System.Xml.Serialization;
 namespace sdi3_23.Cli_RESTcsharp
 {
     [XmlRoot("categories_list")]
-    class ListCategoriesResponse
+    public class ListCategoriesResponse
     {
-        [XmlElement(ElementName = "categories")]
-        public IList<CategoryDTO> categories;
+
+        //"categories"), XmlArrayItem(typeof(CategoryDTO),
+        [XmlArray( ElementName = "category")]
+        public CategoryDTO[] categories { get; set; }
 
 
         public String toString()

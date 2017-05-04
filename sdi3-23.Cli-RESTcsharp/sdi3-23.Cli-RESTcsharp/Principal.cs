@@ -1,26 +1,21 @@
-﻿using System;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
+﻿using alb.util.log;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using alb.util.log;
-
 
 namespace sdi3_23.Cli_RESTcsharp
 {
-    class Program
+    class Principal
     {
-        
+
         static void Main()
         {
-           
+            Log.setLogLevel(LogLevel.DEBUG);
             Cliente.inicializar();
-
+            new MainMenu().ejecutarMenu();
             while (true) ;
         }
-
-        
-
-       
     }
 }

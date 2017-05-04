@@ -73,7 +73,7 @@ namespace sdi3_23.Cli_SOAPcsharp
             }
 
             Consola.println("\t 0 - Salir");
-            Consola.println("\nSelecciones una opcion:");
+            Consola.println("\nSeleccione una opcion:");
         }
     }
 }
