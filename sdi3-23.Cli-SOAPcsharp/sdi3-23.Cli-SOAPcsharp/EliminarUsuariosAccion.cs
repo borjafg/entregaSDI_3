@@ -11,6 +11,11 @@ namespace sdi3_23.Cli_SOAPcsharp
         public void execute()
         {
             Consola.println("probando el menu eliminar usuarios");
+            long id = Input.pedirLong("Escriba el identificador del usuario que hay que eliminar");
+
+           ServiceSoap.AdminServiceImplService servicio = new ServiceSoap.AdminServiceImplService();
+            servicio.deepDeleteUser(id,true);
+            Consola.println("Exito al eliminar al usuario");
         }
     }
 }

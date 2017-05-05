@@ -9,9 +9,12 @@ namespace sdi3_23.Cli_SOAPcsharp
     class ListarUsuariosAction : Accion
     {
         public void execute()
-        {
-            Consola.println("probando el menu listar usuarios");
-          
+        {           
+
+            ServiceSoap.AdminServiceImplService servicio = new ServiceSoap.AdminServiceImplService();
+            Printer.printUsers(servicio.findAllUsersInfo());
+
+
         }
 
 
