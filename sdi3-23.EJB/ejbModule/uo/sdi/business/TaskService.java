@@ -66,9 +66,9 @@ public interface TaskService {
     public List<TaskDTO> findFinishedInboxTasksByUserId(Long userId)
 	    throws BusinessException;
 
-    // ==============================
-    // Métodos de la tercera entrega
-    // ==============================
+    // =====================================
+    // Métodos de la tercera entrega (REST)
+    // =====================================
 
     // El método que lista las categorías de un usuario está con los
     // "métodos relacionados con categorías"

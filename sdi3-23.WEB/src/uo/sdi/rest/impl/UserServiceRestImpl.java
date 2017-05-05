@@ -10,9 +10,9 @@ import uo.sdi.business.exception.BusinessException;
 import uo.sdi.dto.UserDTO;
 import uo.sdi.dto.UserNoPasswordDTO;
 import uo.sdi.infrastructure.Services;
+import uo.sdi.infrastructure.encryption.DecryptionFailedException;
+import uo.sdi.infrastructure.encryption.Encryptor;
 import uo.sdi.rest.UserServiceRest;
-import uo.sdi.rest.exceptions.DecryptionFailedException;
-import uo.sdi.rest.util.Encryptor;
 import uo.sdi.rest.util.ResponseManager;
 import alb.util.log.Log;
 

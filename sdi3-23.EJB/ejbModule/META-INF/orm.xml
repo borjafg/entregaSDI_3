@@ -57,7 +57,8 @@
 			<![CDATA[select t from Task t where 
 				t.user.id = :userId and 
 				t.planned <= CURRENT_DATE and 
-				t.finished is null]]>
+				t.finished is null
+				order by t.planned asc]]>
 		</query>
 	</named-query>
 

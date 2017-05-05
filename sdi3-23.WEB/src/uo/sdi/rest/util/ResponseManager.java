@@ -5,7 +5,7 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 
 import org.jboss.resteasy.specimpl.ResponseBuilderImpl;
 
-import uo.sdi.rest.responses.ErrorResponse;
+import uo.sdi.dto.ErrorDTO;
 
 public class ResponseManager {
 
@@ -26,7 +26,7 @@ public class ResponseManager {
 	    Response.Status errorCode) {
 
 	// (1) Preparamos el mensaje de error
-	ErrorResponse error = new ErrorResponse(
+	ErrorDTO error = new ErrorDTO(
 		MessagesFileReader.getValueOf(messageKey));
 
 	// (2) Generamos la respuesta y la devolvemos

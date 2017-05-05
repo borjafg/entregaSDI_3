@@ -9,12 +9,12 @@ import javax.ws.rs.core.Response;
 import alb.util.log.Log;
 import uo.sdi.business.exception.BusinessException;
 import uo.sdi.dto.CategoryDTO;
+import uo.sdi.dto.ListCategoriesDTO;
+import uo.sdi.dto.ListTasksDTO;
 import uo.sdi.dto.TaskDTO;
 import uo.sdi.infrastructure.Services;
 import uo.sdi.rest.TaskServiceRest;
 import uo.sdi.rest.requests.FinishTaskRequest;
-import uo.sdi.rest.responses.ListCategoriesResponse;
-import uo.sdi.rest.responses.ListTasksResponse;
 import uo.sdi.rest.util.ResponseManager;
 
 /**
@@ -38,7 +38,7 @@ public class TaskServiceRestImpl implements TaskServiceRest {
 		    .getTaskService().findCategoriesByUserId(user_id);
 
 	    // (2) Darle formato al resultado de la búsqueda
-	    ListCategoriesResponse categs = new ListCategoriesResponse();
+	    ListCategoriesDTO categs = new ListCategoriesDTO();
 	    categs.setCategories(categorias);
 
 	    // (3) Generar la respuesta
@@ -74,7 +74,7 @@ public class TaskServiceRestImpl implements TaskServiceRest {
 			    category_id);
 
 	    // (2) Darle formato al resultado de la búsqueda
-	    ListTasksResponse tasks = new ListTasksResponse();
+	    ListTasksDTO tasks = new ListTasksDTO();
 	    tasks.setTasks(tareas);
 
 	    // (3) Generar la respuesta

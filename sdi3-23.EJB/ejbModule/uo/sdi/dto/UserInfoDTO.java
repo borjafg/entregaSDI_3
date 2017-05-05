@@ -8,7 +8,7 @@ import uo.sdi.model.User;
 @XmlRootElement(name = "user_info")
 public class UserInfoDTO extends UserDTO {
 
-    private static final long serialVersionUID = -1968348581L;
+    private static final long serialVersionUID = 1L;
 
     private long numPlannedTasks;
     private long numNotPlannedTasks;

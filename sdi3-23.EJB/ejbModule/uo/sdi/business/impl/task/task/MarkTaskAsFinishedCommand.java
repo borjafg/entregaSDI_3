@@ -42,6 +42,10 @@ public class MarkTaskAsFinishedCommand implements Command<Void> {
 			+ "tarea que no estaba asociada a él",
 		"error_finalizacion_tarea__usuario_no_propietario");
 
+	BusinessCheck.isNull(t.getFinished(), "El usuario " + u.getLogin()
+		+ " ha intentado finalizar una tarea ya finalizada",
+		"error_finalizacion_tarea__ya_finalizada");
+
 	t.setFinished(DateUtil.today()); // Estado persistent
 
 	return null;

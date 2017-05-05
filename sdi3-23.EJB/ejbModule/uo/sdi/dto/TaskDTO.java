@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "task")
 public class TaskDTO implements Serializable {
 
-    private static final long serialVersionUID = -4452890417360L;
+    private static final long serialVersionUID = 1L;
 
     private Long id;
 

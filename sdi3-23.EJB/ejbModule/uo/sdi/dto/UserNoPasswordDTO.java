@@ -10,7 +10,7 @@ import uo.sdi.dto.types.UserStatusDTO;
 @XmlRootElement(name = "user_no_password")
 public class UserNoPasswordDTO implements Serializable {
 
-    private static final long serialVersionUID = -347020645785881L;
+    private static final long serialVersionUID = 1L;
 
     protected Long id;
 

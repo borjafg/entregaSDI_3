@@ -12,6 +12,7 @@
 			<jms-queue name="canal_log_sdi_23">
 				<entry name="queue/canal_log_sdi_23" />
 				<entry name="java:jboss/exported/jms/queue/canal_log_sdi_23" />
+				<durable>true</durable>
 			</jms-queue>
 
 		</jms-destinations>
